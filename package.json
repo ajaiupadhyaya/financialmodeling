@@ -1,0 +1,45 @@
+{
+  "name": "financial-modeling-platform",
+  "version": "1.0.0",
+  "description": "Comprehensive Wall Street-Level Financial Modeling Platform with Advanced Analytics and Interactive Visualizations",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:api\"",
+    "dev:web": "cd web-app && npm run dev",
+    "dev:api": "cd data-pipeline && npm run dev",
+    "build": "npm run build:web && npm run build:api",
+    "build:web": "cd web-app && npm run build",
+    "build:api": "cd data-pipeline && npm run build",
+    "start": "npm run start:web",
+    "start:web": "cd web-app && npm start",
+    "install:all": "npm install && cd web-app && npm install && cd ../data-pipeline && npm install && cd ../analytics-engine && npm install",
+    "test": "npm run test:web && npm run test:analytics",
+    "test:web": "cd web-app && npm test",
+    "test:analytics": "cd analytics-engine && npm test",
+    "generate:reports": "node reports/generate-reports.js",
+    "data:sync": "node data-pipeline/sync-data.js",
+    "excel:export": "node scripts/export-excel.js"
+  },
+  "keywords": [
+    "finance",
+    "modeling",
+    "quantitative",
+    "analytics",
+    "visualization",
+    "d3js",
+    "excel",
+    "wall-street",
+    "risk-management",
+    "portfolio",
+    "machine-learning"
+  ],
+  "author": "Ajai Upadhyaya",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
